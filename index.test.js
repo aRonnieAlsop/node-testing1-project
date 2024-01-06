@@ -19,29 +19,44 @@ describe('[Exercise 1] trimProperties', () => {
 })
 
 describe('[Exercise 2] trimPropertiesMutation', () => {
-  // test('[3] returns an object with the properties trimmed', () => {})
-  // test('[4] the object returned is the exact same one we passed in', () => {})
+  test('[3] returns an object with the properties trimmed', () => {
+    const input = { foo: '  foo ', bar: 'bar ', baz: ' baz' } 
+    const priorInput = { ...input }
+    utils.trimPropertiesMutation(input)
+    expect(input).not.toEqual(priorInput)
+  })
+  test('[4] the object returned is the exact same one we passed in', () => {
+    const input = { foo: 'foo', bar: 'bar', baz: 'baz' }
+    const priorInput = { ...input } 
+    utils.trimPropertiesMutation(input)
+    expect(input).toEqual(priorInput)
+  })
 })
 
 describe('[Exercise 3] findLargestInteger', () => {
-  // test('[5] returns the largest number in an array of objects { integer: 2 }', () => {})
+  test('[5] returns the largest number in an array of objects { integer: 2 }', () => {
+    const input = [{ a: 1, b: 2}]
+    const priorInput = [...input]
+    utils.findLargestInteger(input)
+    expect(input).toEqual(priorInput)
+  })
 })
 
 describe('[Exercise 4] Counter', () => {
-  let counter
-  beforeEach(() => {
-    counter = new utils.Counter(3) // each test must start with a fresh couter
-  })
+  // let counter
+  // beforeEach(() => {
+  //   counter = new utils.Counter(3) // each test must start with a fresh couter
+  // })
   // test('[6] the FIRST CALL of counter.countDown returns the initial count', () => {})
   // test('[7] the SECOND CALL of counter.countDown returns the initial count minus one', () => {})
   // test('[8] the count eventually reaches zero but does not go below zero', () => {})
 })
 
 describe('[Exercise 5] Seasons', () => {
-  let seasons
-  beforeEach(() => {
-    seasons = new utils.Seasons() // each test must start with fresh seasons
-  })
+  // let seasons
+  // beforeEach(() => {
+  //   seasons = new utils.Seasons() // each test must start with fresh seasons
+  // })
   // test('[9] the FIRST call of seasons.next returns "summer"', () => {})
   // test('[10] the SECOND call of seasons.next returns "fall"', () => {})
   // test('[11] the THIRD call of seasons.next returns "winter"', () => {})
@@ -51,11 +66,11 @@ describe('[Exercise 5] Seasons', () => {
 })
 
 describe('[Exercise 6] Car', () => {
-  let focus
-  beforeEach(() => {
-    focus = new utils.Car('focus', 20, 30) // each test must start with a fresh car
-  })
-  // test('[15] driving the car returns the updated odometer', () => {})
+  // let focus
+  // beforeEach(() => {
+  //   focus = new utils.Car('focus', 20, 30) // each test must start with a fresh car
+  // })
+  // // test('[15] driving the car returns the updated odometer', () => {})
   // test('[16] driving the car uses gas', () => {})
   // test('[17] refueling allows to keep driving', () => {})
   // test('[18] adding fuel to a full tank has no effect', () => {})

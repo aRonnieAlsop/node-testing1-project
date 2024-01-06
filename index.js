@@ -27,6 +27,11 @@ function trimProperties(obj) {
  */
 function trimPropertiesMutation(obj) {
   // ✨ implement
+  for (let property in obj) {
+    typeof obj[property] === 'string'
+    ? obj[property] = obj[property].trim()
+    : obj[property] 
+  } return obj
 }
 
 /**
@@ -39,6 +44,12 @@ function trimPropertiesMutation(obj) {
  */
 function findLargestInteger(integers) {
   // ✨ implement
+  return integers.reduce((maxInt, obj) => {
+    if (obj && typeof obj == 'object' && 'integer' in obj) {
+      return Math.max(maxInt, obj.integer)
+    }
+    return maxInt
+  }, Number.NEGATIVE_INFINITY)
 }
 
 class Counter {
