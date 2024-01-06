@@ -131,7 +131,13 @@ describe('[Exercise 6] Car', () => {
     expect(focus.odometer).toBe(1500)
   })
   test('[18] adding fuel to a full tank has no effect', () => {
-  
+    focus.drive(600)
+    expect(focus.tank).toBe(0)
+    focus.refuel(500)
+    expect(focus.tank).toBe(20)
+    focus.drive(600)
+    focus.refuel(35)
+    expect(focus.tank).toBe(20)
   })
 })
 
