@@ -185,7 +185,13 @@ class Car {
  */
 function isEvenNumberAsync(number) {
   // ✨ implement
+  return new Promise((resolve) => {
+    const isEven = number % 2 === 0
+    resolve(isEven)
+  })
+ 
 }
+
 
 module.exports = {
   trimProperties,
